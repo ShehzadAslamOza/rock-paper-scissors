@@ -10,7 +10,7 @@ let playAgainButton = document.querySelector(".playAgainBtn");
 playAgainButton.addEventListener("click", () => {
   playerPoints = 0;
   computerPoints = 0;
-  updateUI("Choose Your Weapon", "First to Score 5 points Wins");
+  updateUI("First to Score 5 points Wins", "Choose Your Weapon");
 
   rockBtn.disabled = false;
   paperBtn.disabled = false;
@@ -21,21 +21,21 @@ playAgainButton.addEventListener("click", () => {
 let rockBtn = document.querySelector(".rockBtn");
 rockBtn.addEventListener("click", () => {
   console.log("Rock Btn Pressed");
-  playRound(playerPlay(rockBtn.textContent), computerPlay());
+  playRound(playerPlay("rock"), computerPlay());
 });
 
 // Player Chooses Paper
 let paperBtn = document.querySelector(".paperBtn");
 paperBtn.addEventListener("click", () => {
   console.log("Paper Btn Pressed");
-  playRound(playerPlay(paperBtn.textContent), computerPlay());
+  playRound(playerPlay("paper"), computerPlay());
 });
 
 // Player Chooses Scissor
 let scissorBtn = document.querySelector(".scissorBtn");
 scissorBtn.addEventListener("click", () => {
   console.log("Scissor Btn Pressed");
-  playRound(playerPlay(scissorBtn.textContent), computerPlay());
+  playRound(playerPlay("scissors"), computerPlay());
 });
 
 // Computer Move
@@ -82,6 +82,7 @@ function playRound(playerSelection, computerSelection) {
     message2 = "You Lose!";
   }
 
+  updateIcon(computerSelection, playerSelection);
   updateUI(message1, message2);
   checkGameOver();
 }
@@ -104,5 +105,44 @@ function checkGameOver() {
     rockBtn.disabled = true;
     paperBtn.disabled = true;
     scissorBtn.disabled = true;
+  }
+}
+
+function updateIcon(compIcon, playerIcon) {
+  let cIcon = document.querySelector(".compIcon");
+  let pIcon = document.querySelector(".playerIcon");
+
+  if (compIcon == "rock") {
+    cIcon.setAttribute(
+      "src",
+      "https://img.icons8.com/color/100/000000/hand-rock.png"
+    );
+  } else if (compIcon == "paper") {
+    cIcon.setAttribute(
+      "src",
+      "https://img.icons8.com/color/90/000000/hand.png"
+    );
+  } else {
+    cIcon.setAttribute(
+      "src",
+      "https://img.icons8.com/color/96/000000/hand-scissors--v2.png"
+    );
+  }
+
+  if (playerIcon == "rock") {
+    pIcon.setAttribute(
+      "src",
+      "https://img.icons8.com/color/100/000000/hand-rock.png"
+    );
+  } else if (playerIcon == "paper") {
+    pIcon.setAttribute(
+      "src",
+      "https://img.icons8.com/color/90/000000/hand.png"
+    );
+  } else {
+    pIcon.setAttribute(
+      "src",
+      "https://img.icons8.com/color/96/000000/hand-scissors--v2.png"
+    );
   }
 }

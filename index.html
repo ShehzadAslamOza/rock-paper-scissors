@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&amp;family=Roboto:wght@400;700&amp;display=swap"
+      rel="stylesheet"
+    />
     <title>Rock Paper Scissor Game!</title>
   </head>
   <body>
@@ -17,31 +25,59 @@
       <h3 class="rules gameDetail">First to Score 5 points Wins</h3>
 
       <div class="scoreBoard">
-        <div class="scoreBoardDisplay">
-          <div class="compBoard">
-            <h3 class="ComputerScoreBoard">
-              Computer Score : <span id="compScore">0</span>
-            </h3>
-          </div>
-          <div class="playerBoard">
-            <h3 class="PlayerScoreBoard">
-              Player Score: <span id="playerScore">0</span>
-            </h3>
-          </div>
+        <div class="compBoard">
+          <img
+            class="compIcon"
+            src="https://img.icons8.com/color/90/000000/hand.png"
+            width="100px"
+          />
+          <h3 class="ComputerScoreBoard">
+            Computer: <span id="compScore">0</span>
+          </h3>
+        </div>
+        <div class="playerBoard">
+          <img
+            class="playerIcon"
+            src="https://img.icons8.com/color/100/000000/hand-rock.png"
+            width="100px"
+          />
+          <h3 class="PlayerScoreBoard">
+            Player: <span id="playerScore">0</span>
+          </h3>
         </div>
       </div>
     </main>
 
     <div class="selection">
-      <button class="rockBtn">Rock</button>
-      <button class="paperBtn">Paper</button>
-      <button class="scissorBtn">Scissors</button>
-      <button class="playAgainBtn">Play Again</button>
+      <div class="rockBtn">
+        <img
+          src="https://img.icons8.com/color/100/000000/hand-rock.png"
+          width="100px"
+        />
+      </div>
+      <div class="paperBtn">
+        <img
+          src="https://img.icons8.com/color/90/000000/hand.png"
+          width="100px"
+        />
+      </div>
+      <div class="scissorBtn">
+        <img
+          src="https://img.icons8.com/color/96/000000/hand-scissors--v2.png"
+          width="100px"
+        />
+      </div>
+      <button class="playAgainBtn" hidden>Play Again</button>
     </div>
 
     <footer>
       <h5 class="copyright">Copyright @ ShehzadAslamOza 2022</h5>
     </footer>
     <script src="game.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4c536a6bd5.js"
+      crossorigin="anonymous"
+    ></script>
+    <style media="all" id="fa-v4-font-face"></style>
   </body>
 </html>

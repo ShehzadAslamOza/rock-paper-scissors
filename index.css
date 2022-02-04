@@ -1,7 +1,3 @@
-.headerText {
-  text-align: center;
-}
-
 .weaponMessage {
   text-align: center;
 }
@@ -13,10 +9,6 @@
 .scoreBoard {
   display: flex;
   justify-content: center;
-}
-
-.scoreBoardDisplay {
-  display: flex;
 }
 
 .selection {
@@ -35,4 +27,75 @@
 body {
   margin: 0;
   padding: 0;
+  font-family: "Press Start 2P";
+  background-color: #635c6d;
+  color: #ffffd1;
+}
+
+header {
+  background-color: #150413;
+  color: #ffffd1;
+  padding: 2px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.headerText {
+  padding: 30px;
+  margin: 0;
+}
+
+.weaponMessage {
+  padding-top: 3%;
+  margin: 0;
+  font-size: 1.75em;
+}
+
+.rules {
+  padding-top: 2%;
+  padding-bottom: 1%;
+  margin: 0;
+  font-size: 1em;
+}
+
+.compBoard,
+.playerBoard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1%;
+  margin-top: 0;
+}
+
+.ComputerScoreBoard,
+.PlayerScoreBoard {
+  font-size: 1em;
+}
+
+.rockBtn,
+.paperBtn,
+.scissorBtn {
+  margin: 1%;
+  padding: 1%;
+  background-color: #706a7a;
+}
+
+.rockBtn:hover,
+.paperBtn:hover,
+.scissorBtn:hover {
+  margin: 1%;
+  padding: 1%;
+  scale: 1.1;
+  background-color: #807a8a;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    font-size: 0.75em;
+  }
+
+  * {
+    margin-bottom: 10%;
+  }
 }
