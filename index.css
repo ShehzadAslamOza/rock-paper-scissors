@@ -95,6 +95,19 @@ header {
     font-size: 0.75em;
   }
 
+  .rules {
+    font-size: 0.75em;
+  }
+
+  .weaponMessage {
+    font-size: 1em;
+  }
+
+  .ComputerScoreBoard,
+  .PlayerScoreBoard {
+    font-size: 0.75em;
+  }
+
   * {
     margin-bottom: 10%;
   }
