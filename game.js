@@ -1,3 +1,44 @@
+let playerScoreBoard = document.querySelector("#playerScore");
+let computerScoreBoard = document.querySelector("#compScore");
+let gameDetail = document.querySelector(".gameDetail");
+let playerPoints = 0;
+let computerPoints = 0;
+
+// Play Again Button
+let playAgainButton = document.querySelector(".playAgainBtn");
+playAgainButton.addEventListener("click", () => {
+  playerPoints = 0;
+  computerPoints = 0;
+  message = "";
+  updateUI(message);
+
+  rockBtn.disabled = false;
+  paperBtn.disabled = false;
+  scissorBtn.disabled = false;
+  playAgainButton.disabled = true;
+});
+
+// Player Chooses Rock
+let rockBtn = document.querySelector(".rockBtn");
+rockBtn.addEventListener("click", () => {
+  console.log("Rock Btn Pressed");
+  playRound(playerPlay(rockBtn.textContent), computerPlay());
+});
+
+// Player Chooses Paper
+let paperBtn = document.querySelector(".paperBtn");
+paperBtn.addEventListener("click", () => {
+  console.log("Paper Btn Pressed");
+  playRound(playerPlay(rockBtn.textContent), computerPlay());
+});
+
+// Player Chooses Scissor
+let scissorBtn = document.querySelector(".scissorBtn");
+scissorBtn.addEventListener("click", () => {
+  console.log("Scissor Btn Pressed");
+  playRound(playerPlay(rockBtn.textContent), computerPlay());
+});
+
 // Computer Move
 function computerPlay() {
   let randomNum = Math.floor(Math.random() * 3);
@@ -12,25 +53,18 @@ function computerPlay() {
 }
 
 // Player Move
-function playerPlay() {
-  let playerMove = prompt("Enter your move: Rock or Paper or Scissors");
-  playerMove = playerMove.toLowerCase();
-
-  while (
-    !(playerMove == "rock" || playerMove == "paper" || playerMove == "scissors")
-  ) {
-    playerMove = prompt("Enter your move: Rock or Paper or Scissors");
-    playerMove = playerMove.toLowerCase();
-  }
-
+function playerPlay(playerMove) {
+  playerMove = playerMove.trim().toLowerCase();
   return playerMove;
 }
 
 // One Round
 function playRound(playerSelection, computerSelection) {
+  let message;
+
   if (playerSelection == computerSelection) {
     console.log(`Game Tied! Both Chose ${playerSelection}`);
-    return 0;
+    message = `Game Tied! Both Chose ${playerSelection}`;
   }
 
   if (
@@ -39,31 +73,35 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection == "scissors" && computerSelection == "paper")
   ) {
     console.log(`You Win! ${playerSelection} beats ${computerSelection}`);
-    return 1;
+    playerPoints++;
+    message = `You Win! ${playerSelection} beats ${computerSelection}`;
   } else {
     console.log(`You Lose! ${computerSelection} beats ${playerSelection}`);
-    return -1;
+    computerPoints++;
+    message = `You Lose! ${computerSelection} beats ${playerSelection}`;
   }
+
+  updateUI(message);
+  checkGameOver();
 }
 
-// One Game
-function game() {
-  let playerPoints = 0;
-  let computerPoints = 0;
-  let currentGame;
+function updateUI(message) {
+  computerScoreBoard.textContent = computerPoints;
+  playerScoreBoard.textContent = playerPoints;
+  gameDetail.textContent = message;
+}
 
-  for (let i = 0; i < 5; i++) {
-    currentGame = playRound(playerPlay(), computerPlay());
-    if (currentGame == 1) {
-      playerPoints++;
-    } else if (currentGame == -1) {
-      computerPoints++;
+function checkGameOver() {
+  if ((computerPoints == 5) | (playerPoints == 5)) {
+    if (computerPoints == 5) {
+      updateUI("Computer Wins");
+    } else if (playerPoints == 5) {
+      updateUI("You Win");
     }
+
+    rockBtn.disabled = true;
+    paperBtn.disabled = true;
+    scissorBtn.disabled = true;
+    playAgainButton.disabled = false;
   }
-
-  console.log(
-    `Computer Points: ${computerPoints}\nPlayer Points: ${playerPoints}`
-  );
 }
-
-game();
