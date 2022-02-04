@@ -4,27 +4,44 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="index.css" />
     <title>Rock Paper Scissor Game!</title>
   </head>
   <body>
-    <h1>Rock Paper Scissor Game</h1>
-    <h3>Working on the UI</h3>
-    <hr />
-    <div>
-      <h3 class="ComputerScoreBoard">
-        Computer Score : <span id="compScore">0</span>
-      </h3>
-      <h3 class="PlayerScoreBoard">
-        Player Score: <span id="playerScore">0</span>
-      </h3>
-      <hr />
-      <h4 class="gameDetail"></h4>
-      <hr />
+    <header>
+      <h1 class="headerText">Rock Paper Scissor</h1>
+    </header>
+    <main>
+      <h2 class="weaponMessage">Choose Your Weapon</h2>
+      <h3 class="rules gameDetail">First to Score 5 points Wins</h3>
+
+      <div class="scoreBoard">
+        <div class="scoreBoardDisplay">
+          <div class="compBoard">
+            <h3 class="ComputerScoreBoard">
+              Computer Score : <span id="compScore">0</span>
+            </h3>
+          </div>
+          <div class="playerBoard">
+            <h3 class="PlayerScoreBoard">
+              Player Score: <span id="playerScore">0</span>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="selection">
       <button class="rockBtn">Rock</button>
       <button class="paperBtn">Paper</button>
-      <button class="scissorBtn">Scissor</button>
-      <button class="playAgainBtn" disabled>Play Again</button>
+      <button class="scissorBtn">Scissors</button>
+      <button class="playAgainBtn">Play Again</button>
     </div>
+
+    <footer>
+      <h5 class="copyright">Copyright @ ShehzadAslamOza 2022</h5>
+    </footer>
     <script src="game.js"></script>
   </body>
 </html>
