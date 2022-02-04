@@ -1,4 +1,4 @@
-# [The Odin Project - Landing Page Project](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors)
+# [The Odin Project - Rock Paper Scissors](https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors)
 
 **Assignment Link:** https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/rock-paper-scissors
 
