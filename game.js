@@ -12,6 +12,9 @@ playAgainButton.addEventListener("click", () => {
   computerPoints = 0;
   updateUI("First to Score 5 points Wins", "Choose Your Weapon");
 
+  document.getElementById("overlay").style.display = "none";
+  document.querySelector(".playAgainBox").style.display = "none";
+
   rockBtn.disabled = false;
   paperBtn.disabled = false;
   scissorBtn.disabled = false;
@@ -98,10 +101,14 @@ function checkGameOver() {
   if ((computerPoints == 5) | (playerPoints == 5)) {
     if (computerPoints == 5) {
       document.querySelector(".weaponMessage").textContent = "Computer Win";
+      document.querySelector(".winnerDisplay").textContent = "Computer Win";
     } else if (playerPoints == 5) {
       document.querySelector(".weaponMessage").textContent = "You Win";
+      document.querySelector(".winnerDisplay").textContent = "You Win";
     }
 
+    document.getElementById("overlay").style.display = "block";
+    document.querySelector(".playAgainBox").style.display = "flex";
     rockBtn.disabled = true;
     paperBtn.disabled = true;
     scissorBtn.disabled = true;
