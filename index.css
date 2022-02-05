@@ -97,8 +97,10 @@ header {
   width: 30%;
   height: 30%;
   border: 2px solid black;
-  top: 30%;
-  left: 35%;
+  top: 50%;
+  left: 50%;
+  margin-top: -13%;
+  margin-left: -15%;
   border: 3px dashed #ffffd1;
   display: none;
   flex-direction: column;
@@ -173,15 +175,18 @@ header {
     background-color: #150413;
     position: fixed;
     z-index: 10;
-    width: 50%;
+    width: 70%;
     height: 30%;
     border: 2px solid black;
-    top: 30%;
-    left: 30%;
+    top: 50%;
+    left: 50%;
+    margin-top: -30%;
+    margin-left: -35%;
     border: 3px dashed #ffffd1;
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: 0.8em;
   }
 }
