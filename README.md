@@ -6,4 +6,6 @@ Creating Rock Paper Scissors Game.
 
 **Game Link:** https://shehzadaslamoza.github.io/rock-paper-scissors/
 
+![Screenshot](game-screenshot.png)
+
 **Learn Full Stack Web Development** on [The Odin Project](https://www.theodinproject.com/).
